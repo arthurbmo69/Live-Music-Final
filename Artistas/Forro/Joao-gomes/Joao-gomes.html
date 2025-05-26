@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/Login/favicon.ico" type="image/x-icon">
+  <title>João Gomes</title>
+  <link rel="stylesheet" href="/Artistas/Artistas-codigo-fonte/css/estilo-artitas.css">
+</head>
+<body>
+
+    <header>
+        <a href="/Categorias/categorias.html"><img class="logo" src="/Login/img/logo-branca.png" alt="Logo"></a>
+        <nav class="navgation">
+            <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+            <a href="/Planos/planos.html">Planos</a>
+            <a href="/Categorias/categorias.html">Categorias</a>
+            <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
+        </nav>
+    </header>
+
+     <div class="barra-pesquisa-container">
+      <div class="campo-pesquisa">
+        <svg class="icone-lupa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ccc" viewBox="0 0 24 24">
+          <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+        </svg>
+        <input type="text" class="barra-pesquisa" placeholder="Pesquisar músicas...">
+        <ul class="resultados-pesquisa"></ul>
+      </div>
+    </div>
+
+  
+  <div class="artist-header">
+    <img src="img/Joao-Gomes-Perfil.jpg" alt="Foto do Artista">
+    <h1>Jõao Gomes</h1>
+  </div>
+
+  <!-- Abas com CSS puro -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+
+<div class="tabs">
+  <div class="tab-labels">
+    <label for="tab1">Músicas</label>
+    <label for="tab2">Biografia</label>
+  </div>
+
+  <!-- Aba 1: Músicas -->
+  <div class="tab-content content1">
+   <ul class="lista-musicas">
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Digo-Ou-Nao-Digo.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Digo Ou Não Digo</span>
+        <span class="duracao-musica">3:02</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Joao-gomes/music/Digo-ou-Nao-Digo.mp3" 
+        data-title="Digo Ou Não Digo" 
+        data-artist="João Gomes" 
+        data-cover="img/Digo-Ou-Nao-Digo.jpg">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Meu-Pedaco-de-Pecado.jpeg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Meu Pedaço de Pecado</span>
+        <span class="duracao-musica">2:37</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Joao-gomes/music/Meu-Pedaco-de-Pecado.mp3" 
+        data-title="Meu Pedaço de Pecado" 
+        data-artist="João Gomes" 
+        data-cover="img/Meu-Pedaco-de-Pecado.jpeg">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Coracao-de-Vaqueiro.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Coração de Vaqueiro</span>
+        <span class="duracao-musica">3:42</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Joao-gomes/music/Coracao-de-Vaqueiro.mp3" 
+        data-title="Coração de Vaqueiro" 
+        data-artist="João Gomes" 
+        data-cover="img/Coracao-de-Vaqueiro.jpg">▶</button>
+    </div>
+  </li>
+</ul>
+
+  </div>
+
+  <!-- Aba 2: Biografia -->
+  <div class="tab-content content2">
+    <div class="biografia">
+  <p>
+    João Gomes é uma das maiores revelações da música brasileira contemporânea, destacando-se como um dos expoentes do novo forró e do piseiro. Natural de Serrita, no interior de Pernambuco, o artista emergiu com uma proposta sonora autêntica, que une elementos do forró tradicional nordestino com influências modernas da música popular.
+  </p>
+  <p>
+    Seu primeiro grande sucesso, <strong>“Meu Pedaço de Pecado”</strong>, não apenas atingiu o topo das paradas nas principais plataformas de streaming, como também consolidou sua identidade musical, marcada por uma voz rouca, letras emotivas e sonoridade regional com apelo nacional. A faixa rapidamente se tornou um marco em sua carreira e o impulsionou para os principais palcos do país.
+  </p>
+  <p>
+    Com uma base de fãs extremamente engajada, João Gomes tem mostrado consistência em seu repertório, lançando músicas que equilibram romantismo, vaquejada e experiências cotidianas, como visto em <strong>“Digo Ou Não Digo”</strong> e <strong>“Coração de Vaqueiro”</strong>, também incluídas nesta plataforma. Seu conteúdo se destaca não só pela qualidade musical, mas também pela capacidade de gerar identificação emocional com o público.
+  </p>
+  <p>
+    Além de cantor, João é também compositor e tem contribuído ativamente para a renovação do gênero. Seu trabalho demonstra um profundo respeito às raízes culturais do Nordeste, ao mesmo tempo em que dialoga com as novas gerações por meio de uma estética moderna, presente inclusive nesta plataforma, que permite a reprodução dinâmica de suas faixas, controle de volume, favoritos e experiência responsiva.
+  </p>
+  <p>
+    Profissionalismo, autenticidade e inovação definem a trajetória de João Gomes. Ele é, sem dúvida, um dos artistas mais influentes da atualidade no cenário do forró eletrônico, sendo peça-chave na revalorização da música nordestina em âmbito nacional.
+  </p>
+   </div>
+  </div>
+</div>
+
+
+  <footer class="player">
+
+  <!-- ÁUDIO real -->
+  <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
+
+  <!-- ESQUERDA: Info da música -->
+  <div class="player-esquerda">
+    <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="Capa" class="capa-musica" />
+    <div class="info-musica">
+      <span class="nome-musica">Digo Ou Não Digo</span>
+      <span class="nome-artista">João Gomes</span>
+    </div>
+  </div>
+
+  <!-- CENTRO: Controles -->
+  <div class="player-centro">
+    <div class="controles-musica">
+      <button aria-label="Anterior">&#9198;</button>
+      <button class="botao-play" aria-label="Tocar/Pausar">&#9654;</button>
+      <button aria-label="Próxima">&#9197;</button>
+    </div>
+    <div class="barra-progresso-container">
+      <span class="tempo-inicio">0:00</span>
+      <div class="barra-progresso">
+        <div class="progresso"></div>
+      </div>
+      <span class="tempo-fim">0:00</span>
+    </div>
+  </div>
+
+  <!-- DIREITA: Volume -->
+  <div class="player-direita">
+    <div class="volume-visual">
+      <button class="botao-volume" aria-label="Volume">
+        <svg class="icone-volume" viewBox="0 0 24 24" fill="none">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="white" />
+        </svg>
+      </button>
+      <div class="volume-waves">
+        <span class="wave wave1"></span>
+        <span class="wave wave2"></span>
+        <span class="wave wave3"></span>
+      </div>
+    </div>
+    <input type="range" class="barra-volume" min="0" max="100" value="50" aria-label="Controle de volume" />
+  </div>
+</footer>
+<script src="/Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
+<script src="/Artistas/Artistas-codigo-fonte/js/script.js"></script>
+</body>
+</html>

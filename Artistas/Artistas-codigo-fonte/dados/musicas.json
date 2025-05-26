@@ -1,0 +1,92 @@
+[
+  {
+    "_comentario": "Início das Músicas de João Gomes",
+    "titulo": "Digo Ou Não Digo",
+    "artista": "João Gomes",
+    "src": "/Artistas/Forro/Joao-gomes/music/Digo-ou-Nao-Digo.mp3",
+    "capa": "/Artistas/Forro/Joao-gomes/img/Digo-Ou-Nao-Digo.jpg"
+  },
+
+  {
+    "titulo": "Meu Pedaço de Pecado",
+    "artista": "João Gomes",
+    "src": "/Artistas/Forro/Joao-gomes/music/Meu-Pedaco-de-Pecado.mp3",
+    "capa": "/Artistas/Forro/Joao-gomes/img/Meu-Pedaco-de-Pecado.jpeg"
+  },
+
+   {
+    "_comentario": "Final das Músicas de João Gomes",
+    "titulo": "Coaçao de Vaqueiro",
+    "artista": "João Gomes",
+    "src": "/Artistas/Forro/Joao-gomes/music/Coracao-de-Vaqueiro.mp3",
+    "capa": "/Artistas/Forro/Joao-gomes/img/Coracao-de-Vaqueiro.jpg"
+  },
+
+    {
+    "_comentario": "Inicio das Músicas de Luiz Gonzaga",
+    "titulo": "Asa Branca",
+    "artista": "Luiz Gonzaga",
+    "src": "/Artistas/Forro/Luiz-gonzaga/music/Asa-Branca.mp3",
+    "capa": "/Artistas/Forro/Luiz-gonzaga/img/Asa-Branca.jpg"
+  },
+
+  {
+    "titulo": "O Xote das Meninas",
+    "artista": "Luiz Gonzaga",
+    "src": "/Artistas/Forro/Luiz-gonzaga/music/O-Xote-das-meninas.mp3",
+    "capa": "/Artistas/Forro/Luiz-gonzaga/img/O-Xote-das-Meninas.jpg"
+  },
+
+    {
+    "_comentario": "Final das Músicas de Luiz Gonzaga",
+    "titulo": "Sala de Reboco",
+    "artista": "Luiz Gonzaga",
+    "src": "/Artistas/Forro/Luiz-gonzaga/music/Sala-de-Reboco.mp3",
+    "capa": "/Artistas/Forro/Luiz-gonzaga/img/Sala-de-Reboco.jpg"
+  }, 
+
+  {
+    "_comentario": "Inicío das Músicas de Nattan",
+    "titulo": "Morena",
+    "artista": "Nattan",
+    "src": "/Artistas/Forro/Nattan/music/19 MORENA - NATTAN VIDEO OFICIAL - YouTube.mp3",
+    "capa": "/Artistas/Forro/Nattan/img/Morena.jpg"
+  },
+
+   {
+    "titulo": "Pelado",
+    "artista": "Nattan",
+    "src": "/Artistas/Forro/Nattan/music/Pelado.mp3",
+    "capa": "/Artistas/Forro/Nattan/img/Pelado.jpg"
+  }, 
+  
+   {
+    "_comentario": "Final das Músicas de Nattan",
+    "titulo": "Não Me Esqueceu, Né?",
+    "artista": "Nattan",
+    "src": "/Artistas/Forro/Nattan/music/Nao-Me-Esqueceu-Ne.mp3",
+    "capa": "/Artistas/Forro/Nattan/img/Nao-Me-Esqueceu.jpg"
+  },
+
+     {
+    "_comentario": "Início das Músicas de Safadão",
+    "titulo": "Porsche Azul",
+    "artista": "Wesley Safadão",
+    "src": "/Artistas/Forro/Wesley-safadao/music/Porsche-Azul.mp3",
+    "capa": "/Artistas/Forro/Wesley-safadao/img/Porsche-Azul.jpg"
+  },
+
+  {
+    "titulo": "Pega o Guanabara e Vem",
+    "artista": "Wesley Safadão",
+    "src": "/Artistas/Forro/Wesley-safadao/music/Pega-o-Guanabara.mp3",
+    "capa": "/Artistas/Forro/Wesley-safadao/img/Pega-o-Guanabara.jpg"
+  },
+
+   {
+    "titulo": "Noite Fracassada",
+    "artista": "Wesley Safadão",
+    "src": "/Artistas/Forro/Wesley-safadao/music/Noite-Fracassada.mp3",
+    "capa": "/Artistas/Forro/Wesley-safadao/img/Noite-Fracassada.jpg"
+  }
+]

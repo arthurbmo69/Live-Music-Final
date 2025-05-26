@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planos de Assinatura</title>
+  <link rel="stylesheet" href="css/estilo-planos.css" />
+</head>
+<body>
+  <header>
+    <a href="/Categorias/categorias.html"><img class="logo" src="../Login-Criar/logo-branca.png" alt="Logo" /></a>
+    <nav class="navgation">
+      <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+      <a href="/Planos/planos.html">Planos</a>
+      <a href="/Categorias/categorias.html">Categorias</a>
+      <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="titulo">Escolha o seu plano</h1>
+
+    <div class="carrossel-container">
+      <button class="seta esquerda">&#10094;</button>
+
+      <div class="carrossel-wrapper">
+        <div class="carrossel-slide">
+          <!-- Plano Normal -->
+          <div class="grupo-planos">
+            <div class="plano">
+              <h2>Gratuito</h2>
+              <p class="preco">R$ 0/mês</p>
+              <ul>
+                <li>Acesso limitado às músicas</li>
+                <li>Anúncios entre faixas</li>
+                <li>Sem modo offline</li>
+              </ul>
+              <button>Plano Atual</button>
+            </div>
+
+            <div class="plano destaque">
+              <h2>Premium</h2>
+              <p class="preco">R$ 19,90/mês</p>
+              <ul>
+                <li>Músicas ilimitadas</li>
+                <li>Sem anúncios</li>
+                <li>Modo offline</li>
+              </ul>
+              <button>Assinar Agora</button>
+            </div>
+
+            <div class="plano">
+              <h2>Familiar</h2>
+              <p class="preco">R$ 34,90/mês</p>
+              <ul>
+                <li>Até 6 contas</li>
+                <li>Todos os recursos Premium</li>
+                <li>Perfis separados</li>
+              </ul>
+              <button>Assinar Agora</button>
+            </div>
+          </div>
+
+          <!-- Planos Anuais -->
+          <div class="grupo-planos">
+            <div class="plano destaque">
+              <h2>Premium Anual</h2>
+              <p class="preco">R$ 199,00/ano</p>
+              <ul>
+                <li>Músicas ilimitadas</li>
+                <li>Sem anúncios</li>
+                <li>Modo offline</li>
+                <li>12 meses de acesso</li>
+              </ul>
+              <button>Assinar Agora</button>
+            </div>
+
+            <div class="plano destaque">
+              <h2>Familiar Anual</h2>
+              <p class="preco">R$ 349,00/ano</p>
+              <ul>
+                <li>Até 6 contas</li>
+                <li>Todos os recursos Premium</li>
+                <li>Perfis separados</li>
+                <li>12 meses de acesso</li>
+              </ul>
+              <button>Assinar Agora</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="seta direita">&#10095;</button>
+    </div>
+  </main>
+
+  <!-- Modal de Formulário -->
+  <div class="modal" id="modal-checkout">
+    <div class="modal-conteudo">
+      <h2>Confirmar Assinatura</h2>
+      <p>Você está prestes a assinar o plano <strong id="plano-escolhido">Premium</strong>.</p>
+
+      <form id="formulario-checkout">
+        <input type="text" placeholder="Nome completo" required />
+        <input type="email" placeholder="E-mail" required />
+        <input type="text" placeholder="CPF" required id="cpf" />
+        <input type="text" placeholder="Número do cartão" required id="cartao" />
+        <div class="botoes-modal">
+          <button type="submit" class="confirmar">Confirmar</button>
+          <button type="button" class="cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmação Final -->
+  <div class="modal" id="modal-confirmacao">
+    <div class="modal-conteudo">
+      <h2>Confirmar Compra</h2>
+      <p>Tem certeza que deseja confirmar a compra?</p>
+      <div class="botoes-modal">
+        <button class="confirmar-final">Sim</button>
+        <button class="cancelar-final">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Alerta: Plano Atual -->
+  <div class="modal" id="modal-plano-atual">
+    <div class="modal-conteudo">
+      <button class="fechar-modal">&times;</button>
+      <h2>Você já possui este plano!</h2>
+      <p>Este já é o seu plano atual. Explore outros se quiser mudar.</p>
+    </div>
+  </div>
+
+  <div id="mensagem-sucesso" class="mensagem-sucesso">
+    Plano alterado para <strong id="nome-plano-sucesso">Premium</strong> com sucesso!
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

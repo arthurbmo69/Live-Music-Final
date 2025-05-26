@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login teste</title>
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+    <source src="img/login.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo em background.
+  </video>
+
+    <header>
+        <img class="logo" src="img/logo-preta.png" alt="">
+        <nav class="navgation">
+            <button class="btnLogin-popup">login</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+        </span>
+        <!-- Formulário de Login -->
+        <!-- Formulário de Login -->
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="php/login.php" method="POST"> <!-- Envia para o PHP -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email" required>
+                    <label>E-mail</label>  
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="senha" required>
+                    <label>Senha</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Lembrar senha</label>
+                    <a href="#">Esqueceu sua senha?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Não possui uma conta? <a href="#" class="register-link">Registre-se</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Registro -->
+        <div class="form-box register">
+            <h2>Registre-se</h2>
+            <form id="formRegistro">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="nome" placeholder="Nome" required />
+                    <label>Nome de Usuário</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email" placeholder="E-mail" required />
+                    <label>E-mail</label> 
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="senha" placeholder="Senha" required />
+                    <label>Senha</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required> Aceito todos os termos e condições.</label>
+                </div>
+                <button type="submit" class="btn">Registrar-se</button>
+                <div class="login-register">
+                    <p>Já possui uma conta? <a href="#" class="login-link">Faça login</a></p>
+                </div>
+            </form>
+            <!-- Mensagem aparecerá aqui -->
+                <div id="mensagem"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

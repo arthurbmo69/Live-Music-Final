@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/Login/favicon.ico" type="image/x-icon">
+  <title>Wesley Safadão</title>
+  <link rel="stylesheet" href="/Artistas/Artistas-codigo-fonte/css/estilo-artitas.css">
+</head>
+<body>
+
+    <header>
+        <a href="/Categorias/categorias.html"><img class="logo" src="/Login/img/logo-branca.png" alt="Logo"></a>
+        <nav class="navgation">
+            <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+            <a href="/Planos/planos.html">Planos</a>
+            <a href="/Categorias/categorias.html">Categorias</a>
+            <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
+        </nav>
+    </header>
+
+     <div class="barra-pesquisa-container">
+      <div class="campo-pesquisa">
+        <svg class="icone-lupa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ccc" viewBox="0 0 24 24">
+          <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+        </svg>
+        <input type="text" class="barra-pesquisa" placeholder="Pesquisar músicas...">
+        <ul class="resultados-pesquisa"></ul>
+      </div>
+    </div>
+
+  
+  <div class="artist-header">
+    <img src="img/Wesley-Perfil.jpg" alt="Foto do Artista">
+    <h1>Wesley Safadão</h1>
+  </div>
+
+  <!-- Abas com CSS puro -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
+
+<div class="tabs">
+  <div class="tab-labels">
+    <label for="tab1">Músicas</label>
+    <label for="tab2">Biografia</label>
+  </div>
+
+  <!-- Aba 1: Músicas -->
+  <div class="tab-content content1">
+   <ul class="lista-musicas">
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Noite-Fracassada.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Noite Fracassada</span>
+        <span class="duracao-musica">3:06</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Wesley-safadao/music/Noite-Fracassada.mp3" 
+        data-title="Noite Fracassada" 
+        data-artist="Wesley Safadão" 
+        data-cover="img/Noite-Fracassada.jpg">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Pega-o-Guanabara.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Pega o Guanabara e Vem</span>
+        <span class="duracao-musica">2:53</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Wesley-safadao/music/Pega-o-Guanabara.mp3" 
+        data-title="Pega o Guanabara e Vem" 
+        data-artist="Wesley Safadão" 
+        data-cover="img/Pega-o-Guanabara.jpg">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/Porsche-Azul.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Porsche Azul</span>
+        <span class="duracao-musica">1:56</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="/Artistas/Forro/Wesley-safadao/music/Porsche-Azul.mp3" 
+        data-title="Porsche Azul" 
+        data-artist="Wesley Safadão" 
+        data-cover="img/Porsche-Azul.jpg">▶</button>
+    </div>
+  </li>
+</ul>
+</div>
+
+    <!-- Aba 2: Biografia -->
+    <div class="tab-content content2">
+  <div class="biografia">
+    <p>
+      Nattan, também conhecido como <strong>Nattanzinho</strong>, é um dos nomes em ascensão da nova geração do forró e piseiro no Brasil. Natural de Sobral, no Ceará, o cantor conquistou o público com sua voz marcante, carisma e uma presença de palco contagiante.
+    </p>
+    <p>
+      Com um estilo que mistura o tradicional forró com elementos modernos da música pop e eletrônica, Nattan tem se destacado por sucessos como <strong>“Tem Cabaré Essa Noite”</strong> e <strong>“Storiezin”</strong>, além de parcerias com artistas consagrados da música nacional.
+    </p>
+    <p>
+      Desde o início de sua carreira, Nattanzinho vem ganhando espaço em grandes festivais e plataformas digitais, alcançando milhões de visualizações e reproduções com suas músicas dançantes e letras envolventes que falam de amor, festas e vivências do cotidiano.
+    </p>
+    <p>
+      Seu talento e autenticidade fizeram dele um dos principais representantes da nova fase do forró eletrônico e do piseiro, conquistando fãs em todas as regiões do país e contribuindo para a valorização da música nordestina em um contexto mais pop e contemporâneo.
+    </p>
+    <p>
+      Com um futuro promissor, Nattan segue firmando seu nome entre os grandes da música brasileira, provando que a cultura nordestina continua forte, vibrante e sempre pronta para conquistar novos públicos.
+    </p>
+  </div>
+</div>
+</div>
+
+
+  <footer class="player">
+
+  <!-- ÁUDIO real -->
+  <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
+
+  <!-- ESQUERDA: Info da música -->
+  <div class="player-esquerda">
+    <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="Capa" class="capa-musica" />
+    <div class="info-musica">
+      <span class="nome-musica">Digo Ou Não Digo</span>
+      <span class="nome-artista">João Gomes</span>
+    </div>
+  </div>
+
+  <!-- CENTRO: Controles -->
+  <div class="player-centro">
+    <div class="controles-musica">
+      <button aria-label="Anterior">&#9198;</button>
+      <button class="botao-play" aria-label="Tocar/Pausar">&#9654;</button>
+      <button aria-label="Próxima">&#9197;</button>
+    </div>
+    <div class="barra-progresso-container">
+      <span class="tempo-inicio">0:00</span>
+      <div class="barra-progresso">
+        <div class="progresso"></div>
+      </div>
+      <span class="tempo-fim">0:00</span>
+    </div>
+  </div>
+
+  <!-- DIREITA: Volume -->
+  <div class="player-direita">
+    <div class="volume-visual">
+      <button class="botao-volume" aria-label="Volume">
+        <svg class="icone-volume" viewBox="0 0 24 24" fill="none">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="white" />
+        </svg>
+      </button>
+      <div class="volume-waves">
+        <span class="wave wave1"></span>
+        <span class="wave wave2"></span>
+        <span class="wave wave3"></span>
+      </div>
+    </div>
+    <input type="range" class="barra-volume" min="0" max="100" value="50" aria-label="Controle de volume" />
+  </div>
+</footer>
+<script src="/Artistas/Artistas-codigo-fonte/js/script.js"></script>
+</body>
+</html>
