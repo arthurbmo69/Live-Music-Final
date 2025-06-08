@@ -1,80 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nome do artista</title>
-  <link rel="stylesheet" href="/Artistas/Artistas-codigo-fonte/css/estilo-artitas.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/Login/favicon.ico" type="image/x-icon">
+  <title>Lexa</title>
+  <link rel="stylesheet" href="/Artistas/Artistas-codigo-fonte/css/estilo-artitas.css">
 </head>
 <body>
 
-  <header class="top-bar">
-    <img class="logo" src="img/Cópia de logo.png" alt="">
-  </header>
+    <header>
+        <a href="/Categorias/categorias.html"><img class="logo" src="/Login/img/logo-branca.png" alt="Logo"></a>
+        <nav class="navgation">
+            <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+            <a href="/Planos/planos.html">Planos</a>
+            <a href="/Categorias/categorias.html">Categorias</a>
+            <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
+        </nav>
+    </header>
 
-  <main class="artista-container">
-    <div class="artista-info">
-      <img class="foto-artista" src="img/lexa-perfil-225x225.jpg">
-      <div class="info-texto">
-        <h2 class="nome-artista">Lexa</h2>
-        <div class="botoes-info">
-          <button class="mix-musicas">MIX</button>
-          <button class="favorito">❤️</button>
-        </div>
+     <div class="barra-pesquisa-container">
+      <div class="campo-pesquisa">
+        <svg class="icone-lupa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ccc" viewBox="0 0 24 24">
+          <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+        </svg>
+        <input type="text" class="barra-pesquisa" placeholder="Pesquisar músicas...">
+        <ul class="resultados-pesquisa"></ul>
       </div>
     </div>
 
-    <nav class="abas-navegacao">
-      <a href="#" class="aba ativa">TOP MUSICAS</a>
-      <a href="#" class="aba">BIOGRAFIA</a>
-    </nav>
+  
+  <div class="artist-header">
+    <img src="img/lexa-perfil-225x225.jpg" alt="Foto do Artista">
+    <h1>Lexa</h1>
+  </div>
 
-    <section class="lista-musicas">
-        <div class="musica">
-            <div class="info-musica-item">
-              <img class="capa-musica" src="img/M1-lexa-225x225.jpg" alt="">
-              <span>Quebrar seu coração</span>
-            </div>
-            <button class="coracao">💙</button>
-        </div>
-          <div class="musica">
-            <div class="info-musica-item">
-              <img class="capa-musica" src="img/M2-lexa-225x225.jpg" alt="">
-              <span>Combatchy</span>
-            </div>
-            <button class="coracao">💙</button>
-          </div>
-          <div class="musica">
-            <div class="info-musica-item">
-              <img class="capa-musica" src="img/M3-lexa-225x225.png" alt="">
-              <span>Bate palma</span>
-            </div>
-            <button class="coracao">💙</button>
-          </div>
-    </section>
+  <!-- Abas com CSS puro -->
+  <input type="radio" name="tab" id="tab1" checked>
+  <input type="radio" name="tab" id="tab2">
 
-     <!-- Biografia (oculta por padrão) -->
-     <section class="biografia" style="display: none;">
-      <h3>Biografia</h3>
-      <p>
-        João Gomes é um dos maiores fenômenos do piseiro e da música nordestina contemporânea. Natural de Serrita, Pernambuco, ele conquistou o Brasil com sua voz marcante e letras que tocam o coração. Desde o lançamento de "Meu Pedaço de Pecado", ele se destacou nas plataformas digitais, ganhando milhões de fãs e se tornando presença certa nas principais playlists do país.
-      </p>
-      <p>
-        Com carisma e originalidade, João Gomes representa uma nova geração da música brasileira, mesclando forró, piseiro e romantismo de forma autêntica. Seu sucesso é fruto de talento, simplicidade e uma conexão genuína com o público.
-      </p>
-    </section>
-  </main>
+<div class="tabs">
+  <div class="tab-labels">
+    <label for="tab1">Músicas</label>
+    <label for="tab2">Biografia</label>
+  </div>
+
+  <!-- Aba 1: Músicas -->
+  <div class="tab-content content1">
+   <ul class="lista-musicas">
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/M1-lexa-225x225.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Combatchy</span>
+        <span class="duracao-musica">3:11</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="\ArtistasFunk\Lexa\music\Anitta Lexa Luisa Sonza feat MC Rebecca - Combatchy.mp3" 
+        data-title="Combatchy" 
+        data-artist="Lexa" 
+        data-cover="img/M1-lexa-225x225">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/M2-lexa-225x225.jpg" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Bate Palma</span>
+        <span class="duracao-musica">3:08</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="\ArtistasFunk\Lexa\music\Jottape e Lexa - Bate Palma.mp3" 
+        data-title="Bate Palma" 
+        data-artist="Lexa" 
+        data-cover="img/M2-lexa-225x225">▶</button>
+    </div>
+  </li>
+
+  <li class="item-musica">
+    <div class="info-musica-lista">
+      <img class="foto-musica" src="img/M3-lexa-225x225.png" alt="Capa da música">
+      <div class="texto-musica">
+        <span class="titulo-musica">Quebrar Seu Coracao</span>
+        <span class="duracao-musica">2:24</span>
+      </div>
+    </div>
+    <div class="acoes-musica">
+      <button class="btn-favorito" title="Favoritar">♡</button>
+      <button 
+        class="btn-play-individual" 
+        data-src="\ArtistasFunk\Lexa\music\Lexa e Luisa Sonza - Quebrar Seu Coracao.mp3" 
+        data-title="Quebrar Seu Coracao" 
+        data-artist="Lexa" 
+        data-cover="img/M3-lexa-225x225">▶</button>
+    </div>
+  </li>
+</ul>
+
+  </div>
+
+  <!-- Aba 2: Biografia -->
+  <div class="tab-content content2">
+    <div class="biografia">
+<p> Lexa é um dos nomes mais relevantes do pop e funk brasileiro atual. Nascida no Rio de Janeiro, a cantora se destacou com uma sonoridade
+   que une o ritmo contagiante do funk com influências do pop e da música eletrônica, conquistando espaço nas paradas e nas pistas de dança do país. </p>
+<p> Seu primeiro grande sucesso, <strong>“Posso Ser”</strong>, revelou seu talento e carisma, abrindo caminho para uma carreira sólida. Desde então, Lexa emplacou hits como <strong>“Sapequinha”</strong> e <strong>“Chama Ela”</strong>, 
+  que reforçam sua presença marcante e seu apelo popular. </p>
+<p> Com uma base de fãs fiel e presença constante na mídia, Lexa também atua como empresária e influenciadora, mostrando versatilidade e domínio sobre sua carreira. Sua música reflete empoderamento, alegria e conexão com as raízes do funk carioca. </p>
+<p> Lexa é sinônimo de energia, talento e representatividade. Uma artista em constante evolução, que contribui ativamente para a valorização do funk no cenário nacional. </p>
+   </div>
+  </div>
+</div>
+
 
   <footer class="player">
+
+  <!-- ÁUDIO real -->
+  <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
+
+  <!-- ESQUERDA: Info da música -->
+  <div class="player-esquerda">
+    <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="Capa" class="capa-musica" />
     <div class="info-musica">
-      <img src="img/M1-lexa-225x225.jpg" alt="Capa" />
-      <div>
-        <strong>Quebrar seu coração</strong><br/>
-        <small>Lexa</small>
+      <span class="nome-musica">Digo Ou Não Digo</span>
+      <span class="nome-artista">João gomes</span>
+    </div>
+  </div>
+
+  <!-- CENTRO: Controles -->
+  <div class="player-centro">
+    <div class="controles-musica">
+      <button aria-label="Anterior">&#9198;</button>
+      <button class="botao-play" aria-label="Tocar/Pausar">&#9654;</button>
+      <button aria-label="Próxima">&#9197;</button>
+    </div>
+    <div class="barra-progresso-container">
+      <span class="tempo-inicio">0:00</span>
+      <div class="barra-progresso">
+        <div class="progresso"></div>
+      </div>
+      <span class="tempo-fim">0:00</span>
+    </div>
+  </div>
+
+  <!-- DIREITA: Volume -->
+  <div class="player-direita">
+    <div class="volume-visual">
+      <button class="botao-volume" aria-label="Volume">
+        <svg class="icone-volume" viewBox="0 0 24 24" fill="none">
+          <path d="M4 9v6h4l5 5V4L8 9H4z" fill="white" />
+        </svg>
+      </button>
+      <div class="volume-waves">
+        <span class="wave wave1"></span>
+        <span class="wave wave2"></span>
+        <span class="wave wave3"></span>
       </div>
     </div>
-    <div class="barra-progresso"></div>
-  </footer>
-  <script src="/Artistas/Artistas-codigo-fonte/js/script.js"></script>
+    <input type="range" class="barra-volume" min="0" max="100" value="50" aria-label="Controle de volume" />
+  </div>
+</footer>
+<script src="/Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
+<script src="/Artistas/Artistas-codigo-fonte/js/script.js"></script>
 </body>
 </html>
