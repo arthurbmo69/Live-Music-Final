@@ -296,4 +296,8 @@ function sortByRelevance(results, term) {
       linha.scrollLeft = scrollLeft - walk;
     });
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 17b18152708c23229089ae3c8bd1de198ddd87d1

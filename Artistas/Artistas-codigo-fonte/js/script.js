@@ -50,25 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-// ---- Atalho: Barra de espaço para Play/Pause ----
-document.addEventListener('keydown', (e) => {
-  // Ignora se estiver digitando em campos de input/textarea
-  const tag = document.activeElement.tagName.toLowerCase();
-  if (tag === 'input' || tag === 'textarea') return;
+  // ---- Atalho: Barra de espaço para Play/Pause ----
+  document.addEventListener('keydown', (e) => {
+    const tag = document.activeElement.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
 
-  if (e.code === 'Space') {
-    e.preventDefault(); // evita rolagem da página
-    if (audio.paused) {
-      audio.play();
-      botaoPlay.textContent = '⏸';
-    } else {
-      audio.pause();
-      botaoPlay.textContent = '▶';
+    if (e.code === 'Space') {
+      e.preventDefault();
+      if (audio.paused) {
+        audio.play();
+        botaoPlay.textContent = '⏸';
+      } else {
+        audio.pause();
+        botaoPlay.textContent = '▶';
+      }
     }
-  }
-});
+  });
 
-  
   // ---- Atualiza tempo total e tempo atual ----
   if (audio && progresso && tempoInicio && tempoFim) {
     audio.addEventListener('loadedmetadata', () => {
@@ -93,7 +91,6 @@ document.addEventListener('keydown', (e) => {
     });
 
     let arrastando = false;
-
     barraProgresso.addEventListener('mousedown', (e) => {
       arrastando = true;
       atualizarProgresso(e);
@@ -163,47 +160,111 @@ document.addEventListener('keydown', (e) => {
         nomeArtista.textContent = artist;
         capaPlayer.src = cover;
 
-        // Exibe o player se estiver oculto
         player.classList.add('player-visivel');
       }
     });
   });
 
-const barraPesquisa = document.querySelector('.barra-pesquisa');
-const listaResultados = document.querySelector('.resultados-pesquisa');
+  // ---- Sistema de Pesquisa Avançado ----
+  const barraPesquisa = document.querySelector('.barra-pesquisa');
+  const listaResultados = document.querySelector('.resultados-pesquisa');
 
-barraPesquisa.addEventListener('input', async () => {
-  const termo = barraPesquisa.value.trim().toLowerCase();
-  listaResultados.innerHTML = '';
-
-  if (termo.length === 0) return;
-
-  try {
-    const resposta = await fetch('/Artistas/Artistas-codigo-fonte/Dados/musicas.json');
-    const musicas = await resposta.json();
-
-    const resultados = musicas.filter(m => m.titulo.toLowerCase().includes(termo));
-
-    resultados.forEach(musica => {
-      const li = document.createElement('li');
-      li.classList.add('resultado-item');
-      li.textContent = `${musica.titulo} - ${musica.artista}`;
-      li.addEventListener('click', () => {
-        audio.src = musica.src;
-        audio.play();
-        nomeMusica.textContent = musica.titulo;
-        nomeArtista.textContent = musica.artista;
-        capaPlayer.src = musica.capa;
-        botaoPlay.textContent = '⏸';
-        player.classList.add('player-visivel');
-        listaResultados.innerHTML = '';
-        barraPesquisa.value = '';
-      });
-      listaResultados.appendChild(li);
-    });
-
-  } catch (erro) {
-    console.error('Erro ao carregar músicas:', erro);
+  // Função para normalizar texto (remover acentos)
+  function normalizeText(text) {
+    return text
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '');
   }
-});
+
+  // Função para destacar o termo pesquisado
+  function highlightText(text, term) {
+    if (!term) return text;
+    const regex = new RegExp(`(${term})`, 'gi');
+    return text.replace(regex, '<span class="destaque-pesquisa">$1</span>');
+  }
+
+  // Função para ordenar por relevância
+  function sortByRelevance(results, term) {
+    const termNorm = normalizeText(term);
+    return [...results].sort((a, b) => {
+      const aTitle = normalizeText(a.titulo);
+      const aArtist = normalizeText(a.artista);
+      const bTitle = normalizeText(b.titulo);
+      const bArtist = normalizeText(b.artista);
+
+      const aScore = (aTitle === termNorm ? 2 : 0) + 
+                    (aArtist === termNorm ? 1 : 0) +
+                    (aTitle.startsWith(termNorm) ? 1 : 0);
+      const bScore = (bTitle === termNorm ? 2 : 0) + 
+                    (bArtist === termNorm ? 1 : 0) +
+                    (bTitle.startsWith(termNorm) ? 1 : 0);
+
+      return bScore - aScore;
+    });
+  }
+
+  barraPesquisa.addEventListener('input', async () => {
+    const termo = barraPesquisa.value.trim();
+    listaResultados.innerHTML = '';
+
+    if (termo.length === 0) return;
+
+    try {
+      const resposta = await fetch('/Artistas/Artistas-codigo-fonte/dados/musicas.json');
+      const musicas = await resposta.json();
+
+      const termoNormalizado = normalizeText(termo);
+      const resultados = musicas.filter(m => 
+        normalizeText(m.titulo).includes(termoNormalizado) || 
+        normalizeText(m.artista).includes(termoNormalizado)
+      );
+
+      const resultadosOrdenados = sortByRelevance(resultados, termo);
+
+      resultadosOrdenados.forEach(musica => {
+        const li = document.createElement('li');
+        li.classList.add('resultado-item');
+        
+        const img = document.createElement('img');
+        img.src = musica.capa;
+        img.alt = `Capa de ${musica.titulo}`;
+        
+        const infoDiv = document.createElement('div');
+        infoDiv.classList.add('info-musica-pesquisa');
+        
+        const titulo = document.createElement('span');
+        titulo.classList.add('titulo-musica-pesquisa');
+        titulo.innerHTML = highlightText(musica.titulo, termo);
+        
+        const artista = document.createElement('span');
+        artista.classList.add('artista-musica-pesquisa');
+        artista.innerHTML = highlightText(musica.artista, termo);
+        
+        infoDiv.appendChild(titulo);
+        infoDiv.appendChild(artista);
+        
+        li.appendChild(img);
+        li.appendChild(infoDiv);
+        
+        li.addEventListener('click', () => {
+          audio.src = musica.src;
+          audio.play();
+          nomeMusica.textContent = musica.titulo;
+          nomeArtista.textContent = musica.artista;
+          capaPlayer.src = musica.capa;
+          botaoPlay.textContent = '⏸';
+          player.classList.add('player-visivel');
+          listaResultados.innerHTML = '';
+          barraPesquisa.value = '';
+        });
+        
+        listaResultados.appendChild(li);
+      });
+
+    } catch (erro) {
+      console.error('Erro ao carregar músicas:', erro);
+    }
+  });
 });
