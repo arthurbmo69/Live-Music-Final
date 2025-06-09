@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias</title>
+  <link rel="stylesheet" href="fonte.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/Categorias/categorias.html"><img class="logo" src="/Login/img/logo-branca.png" alt="Logo"></a>
+        <nav class="navgation">
+            <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+            <a href="/Planos/planos.html">Planos</a>
+            <a href="/Categorias/categorias.html">Categorias</a>
+            <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
+        </nav>
+    </header>
+    
+
+  <div class="barra-pesquisa-container">
+    <div class="campo-pesquisa">
+      <svg class="icone-lupa" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ccc" viewBox="0 0 24 24">
+        <path d="M10 2a8 8 0 105.293 14.293l5.707 5.707 1.414-1.414-5.707-5.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+      </svg>
+      <input type="text" class="barra-pesquisa" placeholder="Pesquisar músicas...">
+      <ul class="resultados-pesquisa"></ul>
+    </div>
+  </div>
+
+  
+  <footer class="player">
+    <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
+    <div class="player-esquerda">
+      <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="Capa" class="capa-musica" />
+      <div class="info-musica">
+        <span class="nome-musica">Digo Ou Não Digo</span>
+        <span class="nome-artista">João Gomes</span>
+      </div>
+    </div>
+    <div class="player-centro">
+      <div class="controles-musica">
+        <button aria-label="Anterior">&#9198;</button>
+        <button class="botao-play" aria-label="Tocar/Pausar">&#9654;</button>
+        <button aria-label="Próxima">&#9197;</button>
+      </div>
+      <div class="barra-progresso-container">
+        <span class="tempo-inicio">0:00</span>
+        <div class="barra-progresso">
+          <div class="progresso"></div>
+        </div>
+        <span class="tempo-fim">0:00</span>
+      </div>
+    </div>
+    <div class="player-direita">
+      <div class="volume-visual">
+        <button class="botao-volume" aria-label="Volume">
+          <svg class="icone-volume" viewBox="0 0 24 24" fill="none">
+            <path d="M4 9v6h4l5 5V4L8 9H4z" fill="white" />
+          </svg>
+        </button>
+        <div class="volume-waves">
+          <span class="wave wave1"></span>
+          <span class="wave wave2"></span>
+          <span class="wave wave3"></span>
+        </div>
+      </div>
+      <input type="range" class="barra-volume" min="0" max="100" value="50" aria-label="Controle de volume" />
+    </div>
+  </footer>
+
+  <script src="fonte.js"></script>
+</body>
+</html>

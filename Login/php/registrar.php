@@ -1,23 +1,44 @@
 <?php
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\Auth;
+use Kreait\Firebase\Exception\Auth\EmailExists;
 
-$factory = (new Factory)->withServiceAccount(__DIR__ . '/banco-live-music-firebase-adminsdk-fbsvc-d5bc01704json.json');
+header("Content-Type: text/html; charset=utf-8");
+
+// Configuração do Firebase
+$factory = (new Factory)
+    ->withServiceAccount(__DIR__.'/firebase-credentials.json')
+    ->withDatabaseUri('https://SEU-PROJETO.firebaseio.com');
+
 $auth = $factory->createAuth();
+$response = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+try {
+    $nome = $_POST['nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
-    $nome = $_POST['nome'] ?? '';
 
-    if (strlen($senha) < 6) {
-        echo '<p class="erro">A senha deve conter pelo menos 6 caracteres.</p>';
-        exit;
+    // Validações básicas
+    if (empty($nome) || empty($email) || empty($senha)) {
+        throw new Exception('Todos os campos são obrigatórios.');
     }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        throw new Exception('E-mail inválido.');
+    }
+
+    if (strlen($senha) < 6) {
+        throw new Exception('A senha deve ter pelo menos 6 caracteres.');
+    }
+
+    // Verifica se o e-mail já está cadastrado
     try {
+        $existingUser = $auth->getUserByEmail($email);
+        $response = '<p class="erro">Este e-mail já está registrado. Use outro e-mail ou faça login.</p>';
+    } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+        // Se o usuário não existe, prossegue com o registro
         $userProperties = [
             'email' => $email,
             'emailVerified' => false,
@@ -27,10 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ];
 
         $createdUser = $auth->createUser($userProperties);
-        echo '<p class="sucesso">✅ Usuário criado com sucesso!</p>';
-
-    } catch (\Kreait\Firebase\Exception\AuthException $e) {
-        echo '<p class="erro">Erro ao criar usuário: ' . $e->getMessage() . '</p>';
+        $response = '<p class="sucesso">Registro realizado! Bem-vindo, ' . htmlspecialchars($nome) . '.</p>';
     }
+
+} catch (Exception $e) {
+    $response = '<p class="erro">Erro: ' . htmlspecialchars($e->getMessage()) . '</p>';
 }
+
+echo $response;
 ?>

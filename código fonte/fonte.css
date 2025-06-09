@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #121212;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 80px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  z-index: 100;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navgation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navgation a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navgation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+  .barra-pesquisa-container {
+  margin: 20px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.barra-pesquisa {
+  width: 100%;
+  padding: 10px 15px 10px 40px; /* espaço para a lupa à esquerda */
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #1a1a1a;
+  color: white;
+  outline: none;
+  box-shadow: 0 0 0 2px #333;
+  transition: box-shadow 0.3s ease;
+}
+
+.barra-pesquisa::placeholder {
+  color: #aaa;
+}
+
+.barra-pesquisa:focus {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.campo-pesquisa {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.icone-lupa {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.resultados-pesquisa {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.resultado-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid #333;
+}
+
+.resultado-item:hover {
+  background-color: #2a2a2a;
+}
+
+
+.info-musica {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* <-- Alinha o texto à esquerda */
+  gap: 2px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+.info-musica img {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+}
+
+.player {
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-top: 1px solid #282828;
+  font-size: 14px;
+
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.player.player-visivel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+.player-esquerda {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.capa-musica {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+}
+
+.info-musica {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.nome-musica {
+  font-weight: 500;
+  color: #fff;
+}
+
+.nome-artista {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.player-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+}
+
+.controles-musica {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.controles-musica button {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font-size: 25px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.controles-musica button:hover {
+  transform: scale(1.2);
+}
+
+.botao-play {
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 50%;
+}
+
+.barra-progresso-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.barra-progresso {
+  flex-grow: 1;
+  height: 4px;
+  background-color: #535353;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progresso {
+  width: 20%; /* valor inicial fictício */
+  height: 100%;
+  background-color: white;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.tempo-inicio,
+.tempo-fim {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.player-direita {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex: 1;
+}
+
+.botao-volume {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-volume {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transition: transform 0.2s ease;
+}
+
+.botao-volume:hover .icone-volume {
+  transform: scale(1.1);
+}
+
+.barra-volume {
+  width: 120px;
+  height: 4px;
+  appearance: none;
+  background: linear-gradient(to right, #fff 50%, #535353 50%);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.barra-volume::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 1.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.barra-volume::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.volume-visual {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.volume-waves {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wave {
+  display: inline-block;
+  width: 4px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50px;
+  opacity: 0.2;
+  transition: height 0.2s ease, opacity 0.2s ease;
+}
+
+.wave1, .wave2, .wave3 {
+  height: 4px;
+}
+
+.resultado-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: white;
+  border-bottom: 1px solid #333;
+}
+
+.resultado-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.resultado-item .info-musica-pesquisa {
+  display: flex;
+  flex-direction: column;
+}
+
+.resultado-item .titulo-musica-pesquisa {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.resultado-item .artista-musica-pesquisa {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.destaque-pesquisa {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: bold;
+}

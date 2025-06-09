@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
-session_start();
-if (!isset($_SESSION['user_email'])) {
-    header("Location: ../Login/indexLogin.html");
-    exit();
-}
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Categorias</title>
-  <link rel="stylesheet" href="css/estilos-categorias.css">
+  <link rel="stylesheet" href="../Categorias/css/estilos-categorias.css">
 </head>
 
 <body>
+
   <header>
-    <img class="logo" src="../Login/img/logo.png" alt="Logo">
-    <nav class="navigation">
-      <a href="../Login/indexLogin.html">Início</a>
-      <a href="../Planos/planos.html">Planos</a>
-      <a href="Categorias.php">Categorias</a>
-      <a href="../Perfil-usuario/index.html">Perfil do Usuário</a>
-      <a href="../Login/php/logout.php">Logout</a>
+    <a href="/Categorias/categorias.html"><img class="logo" src="..//Login/img/logo-branca.png" alt="Logo"></a>
+    <nav class="navgation">
+        <a href="/Login-Criar/Login/indexLogin.html">Início</a>
+        <a href="/Planos/planos.html">Planos</a>
+        <a href="/Categorias/categorias.html">Categorias</a>
+        <a href="/Perfil-usuario/index.html">Perfil do Usuário</a>
     </nav>
-    <div style="margin-right: 20px; font-size: 14px; color: #fff;">
-      Logado como: <strong><?php echo $_SESSION['user_email']; ?></strong>
-    </div>
+    <!-- Adicione este botão (menu hamburguer) -->
+    <button class="menu-hamburguer">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
   </header>
+    
 
   <div class="barra-pesquisa-container">
     <div class="campo-pesquisa">
@@ -40,43 +36,269 @@ if (!isset($_SESSION['user_email'])) {
     </div>
   </div>
 
-  <div class="container-horizontal">
-    <div class="bloco-categorias">
-      <h2 class="titulo-sessao">Categorias</h2>
-      <div class="grid-categorias">
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/forro.png');"></div>
-          <span>Forró</span>
-        </div>
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/samba.png');"></div>
-          <span>Samba</span>
-        </div>
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/funk.png');"></div>
-          <span>Funk</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="bloco-artistas">
-      <h2 class="titulo-sessao">Artistas em Destaque</h2>
-      <div class="grid-artistas">
-        <div class="artista-item">
-          <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="João Gomes">
-          <span>João Gomes</span>
-        </div>
-        <div class="artista-item">
-          <img src="img/artista-exemplo.png" alt="Artista 2">
-          <span>Artista 2</span>
-        </div>
-        <div class="artista-item">
-          <img src="img/artista-exemplo.png" alt="Artista 3">
-          <span>Artista 3</span>
-        </div>
-      </div>
+   <div class="lista-generos">
+  <h2 class="titulo-lista">Gêneros Musicais</h2>
+  
+  <div class="genero-item">
+    <h3 class="nome-genero">Funk</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Forro/Joao-gomes/Joao-gomes.html" class="artista-mini">
+        <img src="../Artistas/Forro/Joao-gomes/img/Joao-Gomes-Perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">João Gomes</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Forro/Luiz-gonzaga/img/luiz-gonzaga-perfil-225x225.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">Luiz Gonzaga</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Forro/Nattan/img/Nattan-Perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">Nattan</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Forro/Wesley-safadao/img/Wesley-Perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">Wesley Safadão</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Forro/Ze-vaqueiro/img/ze-vaqueiro-perfil-225x225.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">Zé Vaqueiro</span>
+      </a>
     </div>
   </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Forró</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Gospel</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">MPB</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Pagode</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Pop</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Rap</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Rock</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Sertanejo</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Trap</h3>
+    <div class="artistas-linha">
+      <a href="/Artistas/Funk/Mc-kevin/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-kevin/img/mc-kevin-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pedrinho/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pedrinho/img/mc-pedrinho-perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-daninha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-daninha/img/mc-daninha-perfil.jpg" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-livinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-livinha/img/mc-livinha-perfil.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="/Artistas/Funk/Mc-pipokinha/index.html" class="artista-mini">
+        <img src="/Artistas/Funk/Mc-pipokinha/img/mc-pipokinha-perfil.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+</div>
 
   <footer class="player">
     <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
@@ -118,7 +340,7 @@ if (!isset($_SESSION['user_email'])) {
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
-  <script src="/Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
+  <script src="../Categorias/js/script.js"></script>
+  <script src="../Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
 </body>
 </html>

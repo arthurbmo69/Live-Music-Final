@@ -26,11 +26,14 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('formRegistro').addEventListener('submit', async function (e) {
-  e.preventDefault(); // ✅ Não recarrega a página
+  e.preventDefault(); // Não recarrega a página
 
   const form = e.target;
   const formData = new FormData(form);
-  const mensagemDiv = document.getElementById('mensagem');
+  
+  // Remove mensagens antigas
+  const oldAlert = document.querySelector('.alert');
+  if (oldAlert) oldAlert.remove();
 
   try {
     const resposta = await fetch('php/registrar.php', {
@@ -39,10 +42,51 @@ document.getElementById('formRegistro').addEventListener('submit', async functio
     });
 
     const texto = await resposta.text();
-    mensagemDiv.innerHTML = texto;
+    
+    // Cria o elemento de alerta
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'alert';
+    
+    // Extrai a classe (sucesso ou erro) da resposta
+    const isSuccess = texto.includes('sucesso');
+    alertDiv.classList.add(isSuccess ? 'success' : 'error');
+    alertDiv.innerHTML = `
+      ${texto.replace(/<p class="(sucesso|erro)">|<\/p>/g, '')}
+      <span class="close-btn">&times;</span>
+    `;
+    
+    document.body.appendChild(alertDiv);
+    
+    // Mostra o alerta com animação
+    setTimeout(() => alertDiv.classList.add('show'), 10);
+    
+    // Fecha o alerta após 5 segundos ou quando clicar no X
+    const closeBtn = alertDiv.querySelector('.close-btn');
+    const closeAlert = () => {
+      alertDiv.classList.remove('show');
+      setTimeout(() => alertDiv.remove(), 400);
+    };
+    
+    closeBtn.addEventListener('click', closeAlert);
+    setTimeout(closeAlert, 5000);
+    
+    // Se for sucesso, limpa o formulário após 1 segundo
+    if (isSuccess) {
+      setTimeout(() => form.reset(), 1000);
+    }
 
   } catch (erro) {
-    mensagemDiv.innerHTML = '<p class="erro">Erro ao registrar. Tente novamente.</p>';
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'alert error show';
+    alertDiv.innerHTML = `
+      Erro ao registrar. Tente novamente.
+      <span class="close-btn">&times;</span>
+    `;
+    document.body.appendChild(alertDiv);
+    
+    const closeBtn = alertDiv.querySelector('.close-btn');
+    closeBtn.addEventListener('click', () => alertDiv.remove());
+    setTimeout(() => alertDiv.remove(), 5000);
   }
 });
 

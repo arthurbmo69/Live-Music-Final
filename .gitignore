@@ -1,0 +1,6 @@
+# Firebase 
+/firebase.json 
+/.firebaserc 
+/serviceAccountKey.json 
+/node_modules/ 
+/.env 
