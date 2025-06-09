@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php
-session_start();
-if (!isset($_SESSION['user_email'])) {
-    header("Location: ../Login/indexLogin.html");
-    exit();
-}
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,19 +8,22 @@ if (!isset($_SESSION['user_email'])) {
 </head>
 
 <body>
+
   <header>
-    <img class="logo" src="../Login/img/logo.png" alt="Logo">
-    <nav class="navigation">
-      <a href="../Login/indexLogin.html">Início</a>
-      <a href="../Planos/planos.html">Planos</a>
-      <a href="Categorias.php">Categorias</a>
-      <a href="../Perfil-usuario/index.html">Perfil do Usuário</a>
-      <a href="../Login/php/logout.php">Logout</a>
+    <a href="/Categorias/categorias.html"><img class="logo" src="..//Login/img/logo-branca.png" alt="Logo"></a>
+    <nav class="navgation">
+        <a href="../Login/indexLogin.html">Início</a>
+        <a href="/Planos/planos.html">Planos</a>
+        <a href="../Perfil-usuario/Perfil.html">Perfil do Usuário</a>
     </nav>
-    <div style="margin-right: 20px; font-size: 14px; color: #fff;">
-      Logado como: <strong><?php echo $_SESSION['user_email']; ?></strong>
-    </div>
+    <!-- Adicione este botão (menu hamburguer) -->
+    <button class="menu-hamburguer">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
   </header>
+    
 
   <div class="barra-pesquisa-container">
     <div class="campo-pesquisa">
@@ -40,43 +35,265 @@ if (!isset($_SESSION['user_email'])) {
     </div>
   </div>
 
-  <div class="container-horizontal">
-    <div class="bloco-categorias">
-      <h2 class="titulo-sessao">Categorias</h2>
-      <div class="grid-categorias">
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/forro.png');"></div>
-          <span>Forró</span>
-        </div>
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/samba.png');"></div>
-          <span>Samba</span>
-        </div>
-        <div class="categoria-item">
-          <div class="botao-categorias" style="background-image: url('img/funk.png');"></div>
-          <span>Funk</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="bloco-artistas">
-      <h2 class="titulo-sessao">Artistas em Destaque</h2>
-      <div class="grid-artistas">
-        <div class="artista-item">
-          <img src="/Artistas/Forro/Joao-gomes/img/joao-gomes-perfil-225x225.jpg" alt="João Gomes">
-          <span>João Gomes</span>
-        </div>
-        <div class="artista-item">
-          <img src="img/artista-exemplo.png" alt="Artista 2">
-          <span>Artista 2</span>
-        </div>
-        <div class="artista-item">
-          <img src="img/artista-exemplo.png" alt="Artista 3">
-          <span>Artista 3</span>
-        </div>
-      </div>
+   <div class="lista-generos">
+  <h2 class="titulo-lista">Gêneros Musicais</h2>
+  
+  <div class="genero-item">
+    <h3 class="nome-genero">Forró</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Forro/Joao-gomes/Joao-gomes.html" class="artista-mini">
+        <img src="../Artistas/Forro/Joao-gomes/img/Joao-Gomes-Perfil.jpg" alt="João Gomes" class="artista-foto">
+        <span class="artista-nome">João Gomes</span>
+      </a>
+      <a href="../Artistas/Forro/Luiz-gonzaga/img/luiz-gonzaga-perfil-225x225.jpg" class="artista-mini">
+        <img src="/Artistas/Forro/Luiz-gonzaga/img/luiz-gonzaga-perfil-225x225.jpg" alt="Luiz Gonzaga" class="artista-foto">
+        <span class="artista-nome">Luiz Gonzaga</span>
+      </a>
+      <a href="../Artistas/Forro/Nattan/Nattan.html" class="artista-mini">
+        <img src="/Artistas/Forro/Nattan/img/Nattan-Perfil.jpg" alt="Nattan" class="artista-foto">
+        <span class="artista-nome">Nattan</span>
+      </a>
+      <a href="../Artistas/Forro/Wesley-safadao/Wesley-Safadao.html" class="artista-mini">
+        <img src="/Artistas/Forro/Wesley-safadao/img/Wesley-Perfil.jpg" alt="Wesley Safadão" class="artista-foto">
+        <span class="artista-nome">Wesley Safadão</span>
+      </a>
+      <a href="../Artistas/Forro/Ze-vaqueiro/ze-vaqueiro.html" class="artista-mini">
+        <img src="/Artistas/Forro/Ze-vaqueiro/img/ze-vaqueiro-perfil-225x225.jpg" alt="Zé Vaqueiro" class="artista-foto">
+        <span class="artista-nome">Zé Vaqueiro</span>
+      </a>
     </div>
   </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Funk</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Funk/Anitta/anitta.html" class="artista-mini">
+        <img src="../Artistas/Funk/Anitta/img/Anitta-perfil-225x225.jpg" alt="Anitta" class="artista-foto">
+        <span class="artista-nome">Anitta</span>
+      </a>
+      <a href="../Artistas/Funk/Lexa/lexa.html" class="artista-mini">
+        <img src="../Artistas/Funk/Lexa/img/lexa-perfil-225x225.jpg" alt="MC Lexa" class="artista-foto">
+        <span class="artista-nome">Lexa</span>
+      </a>
+      <a href="../Artistas/Funk/Mc-cabelinho/mc-cabelinho.html" class="artista-mini">
+        <img src="../Artistas/Funk/Mc-cabelinho/img/Mc-cabelinho_resized.jpg" alt="MC Cabelinho" class="artista-foto">
+        <span class="artista-nome">MC Cabelinho</span>
+      </a>
+      <a href="../Artistas/Funk/Mc-livinho/mc-livinho.html" class="artista-mini">
+        <img src="../Artistas/Funk/Mc-livinho/img/Mc-livinho-perfil_resized.jpg" alt="MC Livinho" class="artista-foto">
+        <span class="artista-nome">MC Livinho</span>
+      </a>
+      <a href="../Artistas/Funk/Mc-ryan/mc-ryan-sp.html" class="artista-mini">
+        <img src="../Artistas/Funk/Mc-ryan/img/Mc-ryanSp-perfil_resized.jpg" alt="MC Ryan SP" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Gospel</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Gospel/Aline-barros/aline-barros.html" class="artista-mini">
+        <img src="../Artistas/Gospel/Aline-barros/img/aline-barros-perfil_resized.jpg" alt="Aline Barros" class="artista-foto">
+        <span class="artista-nome">Aline Barros</span>
+      </a>
+      <a href="../Artistas/Gospel/Anderson-freire/anderson-freire.html" class="artista-mini">
+        <img src="../Artistas/Gospel/Anderson-freire/img/Anderson-Freire-perfil_resized.jpg" alt="Anderson Freire" class="artista-foto">
+        <span class="artista-nome">Anderson Freire</span>
+      </a>
+      <a href="../Artistas/Gospel/Gabriela-rocha/gabriela-rocha.html" class="artista-mini">
+        <img src="../Artistas/Gospel/Gabriela-rocha/img/gabriela-perfil_resized.jpg" alt="Gabriela Rocha" class="artista-foto">
+        <span class="artista-nome">Gabriela Rocha</span>
+      </a>
+      <a href="../Artistas/Gospel/Isadora-pompeo/isadora.html" class="artista-mini">
+        <img src="../Artistas/Gospel/Isadora-pompeo/img/Isadora-perfil_resized.jpg" alt="Isadora Pompeo" class="artista-foto">
+        <span class="artista-nome">Isadora Pompeo</span>
+      </a>
+      <a href="../Artistas/Gospel/Thalles-roberto/thalles.html" class="artista-mini">
+        <img src="../Artistas/Gospel/Thalles-roberto/img/Thalles-perfil_resized.jpg" alt="Thalles Roberto" class="artista-foto">
+        <span class="artista-nome">Thalles Roberto</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">MPB</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Mpb/caetano-veloso/Caetano-Veloso.html" class="artista-mini">
+        <img src="../Artistas/Mpb/caetano-veloso/img/Caetano-Veloso.png" alt="Caetano Veloso" class="artista-foto">
+        <span class="artista-nome">Caetano Veloso</span>
+      </a>
+      <a href="../Artistas/Mpb/Chico-buarque/Chico-Buarque.html" class="artista-mini">
+        <img src="../Artistas/Mpb/Chico-buarque/img/Chico-Buarque.jpg" alt="Chico Buarque" class="artista-foto">
+        <span class="artista-nome">Chico Buarque</span>
+      </a>
+      <a href="../Artistas/Mpb/Djavan/Djavan.html" class="artista-mini">
+        <img src="../Artistas/Mpb/Djavan/img/Djavan.jpg" alt="Djavan" class="artista-foto">
+        <span class="artista-nome">Djavan</span>
+      </a>
+      <a href="../Artistas/Mpb/gilberto-gil/Gilberto-Gil.html" class="artista-mini">
+        <img src="../Artistas/Mpb/gilberto-gil/img/Gilberto-Gil.jpg" alt="Gilberto Gil" class="artista-foto">
+        <span class="artista-nome">Gilberto Gil</span>
+      </a>
+      <a href="../Artistas/Mpb/Rita-lee/Rita-Lee.html" class="artista-mini">
+        <img src="../Artistas/Mpb/Rita-lee/img/Rita-Lee.jpg" alt="Rita Lee" class="artista-foto">
+        <span class="artista-nome">Rita Lee</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Pagode</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Pagode/Ferrugem/Ferrugem.html" class="artista-mini">
+        <img src="../Artistas/Pagode/Ferrugem/img/ferrugem-perfil.jpg" alt="MC Kevin" class="artista-foto">
+        <span class="artista-nome">MC Kevin</span>
+      </a>
+      <a href="../Artistas/Pagode/Ludmila/Ludmilla.html" class="artista-mini">
+        <img src="../Artistas/Pagode/Ludmila/img/Ludmilla-Perfil.jpg" alt="MC Pedrinho" class="artista-foto">
+        <span class="artista-nome">MC Pedrinho</span>
+      </a>
+      <a href="../Artistas/Pagode/Menos-e-mais/Menos-e-Mais.html" class="artista-mini">
+        <img src="../Artistas/Pagode/Menos-e-mais/img/menos-e-mais-perfil.png" alt="MC Daninha" class="artista-foto">
+        <span class="artista-nome">MC Daninha</span>
+      </a>
+      <a href="../Artistas/Pagode/Pericles/Periclis.html" class="artista-mini">
+        <img src="../Artistas/Pagode/Pericles/img/Pericles.jpg" alt="MC Livinha" class="artista-foto">
+        <span class="artista-nome">MC Livinha</span>
+      </a>
+      <a href="../Artistas/Pagode/Thiaguinho/Thiaguinho.html" class="artista-mini">
+        <img src="../Artistas/Pagode/Thiaguinho/img/Thiaguinho.jpg" alt="MC Pipokinha" class="artista-foto">
+        <span class="artista-nome">MC Pipokinha</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Pop</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Pop/Ariana-grande/Ariana-Grande.html" class="artista-mini">
+        <img src="../Artistas/Pop/Ariana-grande/img/ariana-perfil.jpeg" alt="Ariana Grande" class="artista-foto">
+        <span class="artista-nome">Ariana Grande</span>
+      </a>
+      <a href="../Artistas/Pop/Billie-eilish/Billie-Elish.html" class="artista-mini">
+        <img src="../Artistas/Pop/Billie-eilish/img/billie-perfil.jpg" alt="Billie Elish" class="artista-foto">
+        <span class="artista-nome">Billie Elish</span>
+      </a>
+      <a href="../Artistas/Pop/Madonna/Madona.html" class="artista-mini">
+        <img src="../Artistas/Pop/Madonna/img/Madonna.jpg" alt="Madona" class="artista-foto">
+        <span class="artista-nome">Madona</span>
+      </a>
+      <a href="../Artistas/Pop/Michael-jackson/Michael-Jackson.html" class="artista-mini">
+        <img src="../Artistas/Pop/Michael-jackson/img/Michael-Jackson.jpeg" alt="Michael Jackson" class="artista-foto">
+        <span class="artista-nome">Michael Jackson</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Rap</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Rap/50-cent/50-Cent.html" class="artista-mini">
+        <img src="../Artistas/Rap/50-cent/img/50 Cent.jpg" alt="50 Cent" class="artista-foto">
+        <span class="artista-nome">50 Cent</span>
+      </a>
+      <a href="../Artistas/Rap/Eminem/Eminem.html" class="artista-mini">
+        <img src="../Artistas/Rap/Eminem/img/Eminem.jpg" alt="Eminem" class="artista-foto">
+        <span class="artista-nome">Eminem</span>
+      </a>
+      <a href="../Artistas/Rap/Jay-z/Jay-Z.html" class="artista-mini">
+        <img src="../Artistas/Rap/Jay-z/img/Jay-Z.jpg" alt="Jay z" class="artista-foto">
+        <span class="artista-nome">Jay z</span>
+      </a>
+      <a href="../Artistas/Rap/Travis-scott/Travis-Scott.html" class="artista-mini">
+        <img src="../Artistas/Rap/Travis-scott/img/Travis-Scott.jpeg" alt="Travis Scott" class="artista-foto">
+        <span class="artista-nome">Travis Scott</span>
+      </a>
+      <a href="../Artistas/Rap/Xxxtentacion/Xxx-Tentation.html" class="artista-mini">
+        <img src="../Artistas/Rap/Xxxtentacion/img/Xxxtentacion.jpg" alt="Xxxtentacion" class="artista-foto">
+        <span class="artista-nome">Xxxtentacion</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Rock</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Rock/AC-DC/AC_DC.html" class="artista-mini">
+        <img src="../Artistas/Rock/AC-DC/img/AC-DC.jpg" alt="AC DC" class="artista-foto">
+        <span class="artista-nome">AC DC</span>
+      </a>
+      <a href="../Artistas/Rock/guns-n-roses/Guns-n-Roses.html" class="artista-mini">
+        <img src="../Artistas/Rock/guns-n-roses/img/Guns-n-Roses.jpg" alt="Guns n Roses" class="artista-foto">
+        <span class="artista-nome">Guns n Roses</span>
+      </a>
+      <a href="../Artistas/Rock/linkin-park/Linkin-Park.html" class="artista-mini">
+        <img src="../Artistas/Rock/linkin-park/img/Linkin Park.jpeg" alt="Linkin Park" class="artista-foto">
+        <span class="artista-nome">Linkin Park</span>
+      </a>
+      <a href="../Artistas/Rock/metallica/Metallica.html" class="artista-mini">
+        <img src="../Artistas/Rock/metallica/img/Metallica.jpg" alt="Metallica" class="artista-foto">
+        <span class="artista-nome">Metallica</span>
+      </a>
+      <a href="../Artistas/Rock/nirvana/Nervana.html" class="artista-mini">
+        <img src="../Artistas/Rock/nirvana/img/Nirvana.jpg" alt="Nirvana" class="artista-foto">
+        <span class="artista-nome">Nirvana</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Sertanejo</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Sertanejo/Ana-castela/Ana-castela.html" class="artista-mini">
+        <img src="../Artistas/Sertanejo/Ana-castela/img/Ana-castela-perfil-225x225.jpg" alt="Ana Castela" class="artista-foto">
+        <span class="artista-nome">Ana Castela</span>
+      </a>
+      <a href="../Artistas/Sertanejo/Gusttavo-lima/Gusttavo-lima.html" class="artista-mini">
+        <img src="../Artistas/Sertanejo/Gusttavo-lima/img/gusttavo-lima-perfil-225x225.jpg" alt="Gusttavo Lima" class="artista-foto">
+        <span class="artista-nome">Gusttavo Lima</span>
+      </a>
+      <a href="../Artistas/Sertanejo/Luan-santana/Luan-santana.html" class="artista-mini">
+        <img src="../Artistas/Sertanejo/Luan-santana/img/luan-santana-perfil-225x225.jpg" alt="Luan Santana" class="artista-foto">
+        <span class="artista-nome">Luan Santana</span>
+      </a>
+      <a href="../Artistas/Sertanejo/Maiara e Maraisa/Maiara-e-Maraisa.html" class="artista-mini">
+        <img src="../Artistas/Sertanejo/Maiara e Maraisa/img/perfil-225x225.jpg" alt="Maiara e Maraisa" class="artista-foto">
+        <span class="artista-nome">Maiara e Maraisa</span>
+      </a>
+      <a href="../Artistas/Sertanejo/Marilia-mendeonca/Marilia-Mendonca.html" class="artista-mini">
+        <img src="../Artistas/Sertanejo/Marilia-mendeonca/img/marilia-mendonca.jpeg" alt="Marilia Mendeonça" class="artista-foto">
+        <span class="artista-nome">Marilia Mendeonça</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="genero-item">
+    <h3 class="nome-genero">Trap</h3>
+    <div class="artistas-linha">
+      <a href="../Artistas/Trap/Cardi-B/Cardi-B.html" class="artista-mini">
+        <img src="../Artistas/Trap/Cardi-B/img/Card-B.jpg" alt="Cardi B" class="artista-foto">
+        <span class="artista-nome">Cardi B</span>
+      </a>
+      <a href="../Artistas/Trap/Matue/Matue.html" class="artista-mini">
+        <img src="../Artistas/Trap/Matue/img/Matue.jpg" alt="Matue" class="artista-foto">
+        <span class="artista-nome">Matue</span>
+      </a>
+      <a href="../Artistas/Trap/Oruam/Oruam.html" class="artista-mini">
+        <img src="../Artistas/Trap/Oruam/img/Oruam.jpg" alt="Oruam" class="artista-foto">
+        <span class="artista-nome">Oruam</span>
+      </a>
+      <a href="../Artistas/Trap/Teto/Teto.html" class="artista-mini">
+        <img src="../Artistas/Trap/Teto/img/Teto.png" alt="Teto" class="artista-foto">
+        <span class="artista-nome">Teto</span>
+      </a>
+      <a href="../Artistas/Trap/Xama/Xama.html" class="artista-mini">
+        <img src="../Artistas/Trap/Xama/img/Xama.jpg" alt="Xamã" class="artista-foto">
+        <span class="artista-nome">Xamã</span>
+      </a>
+    </div>
+  </div>
+</div>
 
   <footer class="player">
     <audio id="audio-player" src="musicas/01 - Digo ou Não Digo - João Gomes.mp3"></audio>
@@ -119,6 +336,6 @@ if (!isset($_SESSION['user_email'])) {
   </footer>
 
   <script src="js/script.js"></script>
-  <script src="/Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
+  <script src="../Artistas/Artistas-codigo-fonte/js/pesquisa.js"></script>
 </body>
 </html>

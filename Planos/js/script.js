@@ -135,4 +135,3 @@ document.querySelector('.confirmar-final').addEventListener('click', () => {
     }
   });
 });
-
